@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="temp" type="contact"/>
+    <lightning:input value="{!v.temp}" type="String" label="Input" />
+</aura:component>

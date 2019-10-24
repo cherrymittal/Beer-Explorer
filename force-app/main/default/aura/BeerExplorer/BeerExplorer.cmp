@@ -1,0 +1,23 @@
+<!-- The main page. Includes header, search and beerlist component -->
+
+<aura:component implements="force:appHostable,lightning:isUrlAddressable" controller="BeerSearchAuraServices" >
+    <aura:handler name="BeerEvent" event="c:SearchEvent"  action="{!c.handleCompEvent}" />
+    <aura:handler name="init" value="{!this}" action="{!c.handleCompEvent}" />
+    <aura:handler name="addToCart" event="c:AddToCart" action="{!c.updateCart}" />
+    <aura:attribute name="beerList" type="Object" />
+    <div>
+        <c:HeaderComponent aura:id="headerComp" TagLine="BeerExplorer" message="Search and order Beer in a very easy manner!" />
+	</div>
+    <div>
+        <c:BeerSearch />
+    </div>
+    <div>
+
+       <c:BeerListComponent recordList="{!v.beerList}"/> 
+        <!-- <aura:iteration items="{!v.beerList}" var="item">
+        	{!item.id} - {!item.Name} 
+    </aura:iteration>-->
+        
+    </div>
+	
+</aura:component>
